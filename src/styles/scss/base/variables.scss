@@ -1,0 +1,38 @@
+$color-black: #151515;
+$color-white: #ffffff;
+
+$font-primary: 'itc-avant-garde-gothic-pro';
+
+$font-family: $font-primary, 'Helvetica', 'Arial', 'sans-serif';
+
+// Font Weights
+$light: 200;
+$regular: 400;
+$bold: 600;
+
+$font-xs: rem(14);
+$font-sm: rem(16);
+$font-md: rem(20);
+$font-md-alt: rem(24);
+$font-lg-alt: rem(30);
+$font-lg: rem(40);
+$font-xl: rem(80);
+
+$line-sm: rem(30);
+$line-md: rem(30);
+$line-lg: rem(50);
+
+$margin-xs: rem(20);
+$margin-sm: rem(30);
+$margin-md: rem(50);
+$margin-lg: rem(80);
+$margin-xl: rem(100);
+
+// Breakpoints
+$phone-sm: 576px;
+$tablet-md: 768px;
+$desktop-lg: 992px;
+$desktop-xl: 1200px;
+$desktop-xxl: 1600px;
+
+$container-xxl: 1540px;

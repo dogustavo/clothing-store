@@ -1,0 +1,292 @@
+%title-single {
+    font-size: $font-xs;
+    font-weight: $regular;
+}
+
+%title-section {
+    font-size: $font-lg-alt;
+    font-weight: $regular;
+    text-transform: uppercase;
+}
+
+%subtitle-section {
+    font-size: $font-xs;
+    font-weight: $regular;
+}
+
+%title-with-subtitle {
+    font-size: $font-md-alt;
+    font-weight: $regular;
+}
+
+%subtitle {
+    font-size: $font-sm;
+    font-weight: $regular;
+}
+
+%title-sm {
+    font-size: $font-md;
+    line-height: rem(24);
+    font-weight: $bold;
+}
+
+%centred-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%padding-mobile {
+    padding-right: $margin-xs;
+    padding-left: $margin-xs;
+}
+
+%input-group {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(50);
+    width: 100%;
+
+    > label {
+        font-size: $font-md;
+        color: $color-black;
+        font-weight: $regular;
+        padding-bottom: rem(10);
+    }
+    
+    textarea,
+    input {
+        font-size: $font-md-alt;
+        color: $color-black;
+        font-weight: $regular;
+        border: none;
+        padding-bottom: rem(10);
+        width: 100%;
+
+        &::placeholder {
+            color: $color-white;
+        }
+    }
+
+    .wrap-input {
+        position: relative;
+
+        &::after {
+            content: '';
+            height: 1px;
+            width: 1px;
+            position: absolute;
+
+            background-color: rgb(211, 0, 0);
+        }
+    }
+
+    &.invalid {
+        .wrap-input {
+            &::after {
+                animation: invalidInputValidate 3s linear;
+                
+                bottom: 0;
+                right: 0;
+                height: 1px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+%button {
+    padding: rem(20) rem(40);
+    background-color: $color-black;
+    color: $color-white;
+    font-size: $font-md;
+    font-weight: $regular;
+}
+
+%rotate-90 {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+%animate-button {
+    &:before,
+    &:after {
+        content:'';
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    &:before {
+        transform: translate3d(-100%, 0, 0);
+        background-color: $color-white;
+        transition: transform 300ms cubic-bezier(0.3, 0.76, 0.4, 0.95);
+    }
+    
+    &:after {
+        background-color: $color-black;
+        transform: translate3d(101%, 0, 0);
+        transition: transform 300ms 100ms cubic-bezier(.16,.73,.58,.62);
+    }
+    
+    &:hover {
+
+        color: $color-white;
+        transition: color 300ms cubic-bezier(1,0,1,0);
+
+        &:before {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+            transition: transform 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        
+        &:after {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+            transition: transform 300ms 100ms cubic-bezier(.16,.73,.58,.62);
+        }
+    }
+}
+
+%fade-to-white {
+    background-color: $color-white;
+    color: $color-black;
+    transition: background-color .4s, color .4s;
+    will-change: background-color, color;
+}
+
+%fade-to-black {
+    background-color: $color-black;
+    color: $color-white;
+    transition: background-color .4s, color .4s, border .4s;
+    will-change: background-color, color, border;
+}
+
+@media screen and (min-width: $tablet-md) {
+
+}
+
+@media screen and (min-width: $desktop-lg) {
+
+    %title-single {
+        font-size: $font-lg-alt;
+        line-height: $margin-md;
+        font-weight: $regular;
+    }
+
+    %title-section {
+        font-size: $font-lg;
+        font-weight: $regular;
+        text-transform: uppercase;
+    }
+    
+    %subtitle-section {
+        font-size: $font-md;
+        font-weight: $regular;
+    }
+    
+    %title-with-subtitle {
+        font-size: $font-lg-alt;
+        font-weight: $regular;
+    }
+    
+    %subtitle {
+        font-size: $font-xs;
+        font-weight: $regular;
+    }
+    
+}
+
+@keyframes invalidInputValidate {
+
+    0% {
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 1px;
+    }
+
+    10% {
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+    }
+
+    20% {
+        width: 1px;
+        left: 0;
+        top: 0;
+        bottom: unset;
+    }
+
+    30% {
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+    }
+    
+    40% {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+    }
+    
+    50% {
+        left: unset;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+    
+    60% {
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 1px;
+    }
+    
+    70% {
+        top: 0;
+        right: 0;
+        bottom: auto;
+        height: 100%;
+        width: 1px;
+    }
+    
+    79% {
+        right: 0;
+        top: auto;
+        bottom: 0;
+        height: 100%;
+        width: 1px;
+    }
+
+    80% {
+        height: 1px;
+        width: 1px;
+    }
+
+    90% {
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        width: 100%;
+    }
+
+    100% {
+        bottom: 0;
+        right: 0;
+        height: 1px;
+        width: 100%;
+    }
+}
