@@ -1,0 +1,25 @@
+.header {
+    height: rem(70);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(75);
+
+    .logo-container {
+        height: 100%;
+        width: rem(70);
+        padding: rem(25);
+    }
+
+    .options {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .option {
+        padding: rem(10) rem(15);
+        }
+    }
+}
