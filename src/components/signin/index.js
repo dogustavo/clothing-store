@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormInput from '../../components/input';
-
+import Button from '../../components/button';
 
 class Signin extends React.Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class Signin extends React.Component {
     render() {
         return (
             <div className="sign-in">
-                <h2>I already have an account</h2>
+                <h2 className='sign-in-title'>I already have an account</h2>
                 <span>Sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
@@ -49,7 +49,7 @@ class Signin extends React.Component {
                         required
                     />
 
-                    <input type='submit' value='Submit Form'/>
+                    <Button type='submit'>Sign in</Button>
                 </form>
             </div>
         )
