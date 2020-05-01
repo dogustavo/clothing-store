@@ -8,6 +8,7 @@ import {
 import Home from '../pages/homepage';
 import ShopPage from '../pages/shopPage/shop';
 import Header from '../components/header';
+import SignInAndSignUpPage from '../pages/user';
 
 const Routes = () => (
     <BrowserRouter>
@@ -15,6 +16,7 @@ const Routes = () => (
         <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/shop' component={ShopPage}/>
+            <Route path='/signin' component={SignInAndSignUpPage}/>
         </Switch>
     </BrowserRouter>
 );

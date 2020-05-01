@@ -1,6 +1,5 @@
 $color-black: #151515;
 $color-white: #ffffff;
-
 $color-daviy-grey: #4a4a4a;
 
 $font-primary: 'Open Sans Condensed';
@@ -11,6 +10,10 @@ $font-family: $font-primary, 'Helvetica', 'Arial', 'sans-serif';
 $light: 200;
 $regular: 400;
 $bold: 600;
+
+// Personlaized fonts
+$font-xs-small: rem(14);
+$font-sm-plus: rem(18);
 
 $font-xs: rem(14);
 $font-sm: rem(16);

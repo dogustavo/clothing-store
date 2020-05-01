@@ -19,7 +19,9 @@
         justify-content: flex-end;
 
         .option {
-        padding: rem(10) rem(15);
+            padding: rem(10) rem(15);
+            font-size: $font-md-alt;
+            text-transform: uppercase;
         }
     }
 }
