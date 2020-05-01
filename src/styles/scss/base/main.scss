@@ -15,7 +15,7 @@ body {
     letter-spacing: rem(2);
     line-height: normal;
     margin: 0px;
-    padding: 0px;
+    padding: 20px 60px;
 
     @media (min-width: $phone-sm) {
         font-size: 3vw;

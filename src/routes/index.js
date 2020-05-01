@@ -6,19 +6,13 @@ import {
 } from 'react-router-dom';
 
 import Home from '../pages/homepage';
-
-
-const HatsPage = () => (
-    <>
-        <h1>Hats Page</h1>
-    </>
-)
+import ShopPage from '../pages/shopPage/shop';
 
 const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/hats' component={HatsPage}/>
+            <Route path='/shop' component={ShopPage}/>
         </Switch>
     </BrowserRouter>
 );
