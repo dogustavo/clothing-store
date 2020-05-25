@@ -4,6 +4,7 @@ import {
     Switch,
     Route
 } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { auth, createUserProfileDocument } from '../firebase';
 
@@ -11,37 +12,28 @@ import Home from '../pages/homepage';
 import ShopPage from '../pages/shopPage/shop';
 import Header from '../components/header';
 import SignInAndSignUpPage from '../pages/user';
+import { setCurrentUser } from '../redux/user/user-actions';
 
 class Routes extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            currentUser: null
-        }
-	}
-	
 	unsubscribeFromAuth = null;
 
     componentDidMount() {
+        const { setCurrentUser } = this.props
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
             if(userAuth) {
                 const userRef = await createUserProfileDocument(userAuth);
 
                 userRef.onSnapshot(snapShot => {
-                    this.setState({
-                        currentUser: {
+                    setCurrentUser({
                             id: snapShot.id,
                             ...snapShot.data()
-                        }
+                        })
                     })
                     
-                })
+            }
+            setCurrentUser(userAuth);
                 
-            }
-            else {
-                this.setState({ currentUser: userAuth });
-            }
+
 		})
 	
 	}
@@ -53,7 +45,7 @@ class Routes extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <Header currentUser={ this.state.currentUser }/>
+                <Header/>
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path='/shop' component={ShopPage}/>
@@ -63,6 +55,10 @@ class Routes extends React.Component {
         )
     }
 }
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user => dispatch(setCurrentUser(user))
+})
   
 
-export default Routes
+export default connect(null, mapDispatchToProps)(Routes);
